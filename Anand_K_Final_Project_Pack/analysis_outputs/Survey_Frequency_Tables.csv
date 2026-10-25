@@ -1,0 +1,160 @@
+question,response,frequency,percentage
+1. What is your age group?,25–34,92,21.6
+1. What is your age group?,Under 18,86,20.2
+1. What is your age group?,18–24,66,15.5
+1. What is your age group?,55 or above,62,14.6
+1. What is your age group?,45–54,61,14.3
+1. What is your age group?,35–44,59,13.8
+2. What is your gender? (Optional),Female,150,35.2
+2. What is your gender? (Optional),Male,142,33.3
+2. What is your gender? (Optional),Prefer not to say,134,31.5
+3. How long have you used your current provider?,6–12 months,94,22.1
+3. How long have you used your current provider?,1–2 years,91,21.4
+3. How long have you used your current provider?,More than 5 years,84,19.7
+3. How long have you used your current provider?,3–5 years,80,18.8
+3. How long have you used your current provider?,Less than 6 months,77,18.1
+4. Which type of mobile subscription do you currently use with your mobile network operator?,Prepaid mobile connection (recharge before use),116,27.2
+4. Which type of mobile subscription do you currently use with your mobile network operator?,Postpaid mobile connection (receive a bill after use),112,26.3
+4. Which type of mobile subscription do you currently use with your mobile network operator?,Corporate or company-provided mobile connection,103,24.2
+4. Which type of mobile subscription do you currently use with your mobile network operator?,Family or group mobile plan,95,22.3
+5. Which service do you mainly use?,Both mobile and internet,158,37.1
+5. Which service do you mainly use?,Home broadband / internet,149,35.0
+5. Which service do you mainly use?,Mobile phone service,119,27.9
+6. What is your usual payment method?,Cash,103,24.2
+6. What is your usual payment method?,Bank transfer / auto-debit,85,20.0
+6. What is your usual payment method?,UPI / digital wallet,83,19.5
+6. What is your usual payment method?,Debit card,81,19.0
+6. What is your usual payment method?,Credit card,74,17.4
+7. What is your approximate monthly bill?,₹500–₹999,104,24.4
+7. What is your approximate monthly bill?,Below ₹500,88,20.7
+7. What is your approximate monthly bill?,"₹4,000 or above",84,19.7
+7. What is your approximate monthly bill?,"₹1,000–₹1,999",81,19.0
+7. What is your approximate monthly bill?,"₹2,000–₹3,999",68,16.0
+7. What is your approximate monthly bill?,Not applicable / prefer not to say,1,0.2
+11. Does the service provide good value for money?,2,90,21.1
+11. Does the service provide good value for money?,4,88,20.7
+11. Does the service provide good value for money?,5,88,20.7
+11. Does the service provide good value for money?,3,87,20.4
+11. Does the service provide good value for money?,1,73,17.1
+12. How frequently do you use the service?,Several times a day,114,26.8
+12. How frequently do you use the service?,Several times a week,104,24.4
+12. How frequently do you use the service?,Less often,104,24.4
+12. How frequently do you use the service?,About once a day,104,24.4
+15. How likely are you to switch providers in the next 6 months?,2,98,23.0
+15. How likely are you to switch providers in the next 6 months?,3,94,22.1
+15. How likely are you to switch providers in the next 6 months?,1,84,19.7
+15. How likely are you to switch providers in the next 6 months?,5,79,18.5
+15. How likely are you to switch providers in the next 6 months?,4,71,16.7
+16. What is the main reason you might consider switching?,I am not considering switching,72,16.9
+16. What is the main reason you might consider switching?,Frequent service interruptions,64,15.0
+16. What is the main reason you might consider switching?,Poor network / service quality,61,14.3
+16. What is the main reason you might consider switching?,Poor customer support,60,14.1
+16. What is the main reason you might consider switching?,Better offer from another provider,58,13.6
+16. What is the main reason you might consider switching?,Limited features or coverage,56,13.1
+16. What is the main reason you might consider switching?,High price,54,12.7
+16. What is the main reason you might consider switching?,Other,1,0.2
+17. What improvement would encourage you to stay with your provider?,More affordable monthly plans.,33,7.7
+17. What improvement would encourage you to stay with your provider?,Faster customer support resolution times.,31,7.3
+17. What improvement would encourage you to stay with your provider?,Better network coverage and faster data speeds.,27,6.3
+17. What improvement would encourage you to stay with your provider?,Better loyalty benefits and rewards.,24,5.6
+17. What improvement would encourage you to stay with your provider?,Better voice clarity on international calling packages.,10,2.3
+17. What improvement would encourage you to stay with your provider?,Faster resolution of billing disputes.,8,1.9
+17. What improvement would encourage you to stay with your provider?,Exclusive discounts on annual recharge packs.,8,1.9
+17. What improvement would encourage you to stay with your provider?,No response,7,1.6
+17. What improvement would encourage you to stay with your provider?,Faster technician visits for broadband connectivity issues.,7,1.6
+17. What improvement would encourage you to stay with your provider?,Better integration with third-party payment apps.,7,1.6
+17. What improvement would encourage you to stay with your provider?,Smarter AI chatbot assistance for quick troubleshooting.,6,1.4
+17. What improvement would encourage you to stay with your provider?,Free upgrades to higher data tiers.,6,1.4
+17. What improvement would encourage you to stay with your provider?,Priority customer support for long-standing subscribers.,6,1.4
+17. What improvement would encourage you to stay with your provider?,Better international roaming packages.,6,1.4
+17. What improvement would encourage you to stay with your provider?,Free data top-ups during service disruptions.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Faster internet speeds during peak evening hours.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Higher quality video streaming without buffering.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Clearer communication on plan validity extensions.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Longer validity periods on basic prepaid recharges.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Greater transparency on network coverage maps.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Improved 4G fallback when 5G is unavailable.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Improved mobile app for account management and payments.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Auto-debit discounts for monthly post-paid bills.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Better customer privacy and protection from spam.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Overall reliable service quality at a reasonable price.,5,1.2
+17. What improvement would encourage you to stay with your provider?,Better fiber internet uptime and lower latency.,5,1.2
+17. What improvement would encourage you to stay with your provider?,More transparent tariff plans without fair usage policy limits.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Better rollover options for unused data.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Better signal strength inside high-rise buildings.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Dedicated relationship manager for account issues.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Customized plans where I only pay for what I use.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Special discount vouchers on birthday or anniversaries.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Better loyalty points redeemable for bill credits.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Instant refund for failed online recharges.,4,0.9
+17. What improvement would encourage you to stay with your provider?,More helpful staff at physical retail stores.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Improved indoor signal strength.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Option to roll over unused voice call minutes.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Easier process for plan upgrades and downgrades.,4,0.9
+17. What improvement would encourage you to stay with your provider?,Faster speed recovery after network glitches.,3,0.7
+17. What improvement would encourage you to stay with your provider?,No sudden cancellation of expired data benefits.,3,0.7
+17. What improvement would encourage you to stay with your provider?,More stable connections in crowded public places.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Better bundle deals with OTT streaming subscriptions.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Fairer pricing compared to rival network operators.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Cashback offers on digital wallet recharges.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Free access to cloud storage with subscription plans.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Better customer support through WhatsApp or chat.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Simpler process to switch between prepaid and postpaid.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Guaranteed price locks for at least two years.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Consistent high-speed internet throughout the month.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Better customer rewards programs for monthly recharges.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Discounted plans for long-term customers.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Better security against SIM-swapping fraud.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Cheaper broadband and mobile bundled packages.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Better corporate employee discount schemes.,3,0.7
+17. What improvement would encourage you to stay with your provider?,No throttling of data speeds after reaching daily caps.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Fewer dropouts during VoLTE voice calls.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Shorter wait times when calling customer helpline.,3,0.7
+17. What improvement would encourage you to stay with your provider?,More transparent data usage tracking.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Better voice call clarity with fewer call drops.,3,0.7
+17. What improvement would encourage you to stay with your provider?,Lower cost for add-on data packs.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Fewer promotional spam calls and SMS messages.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Better customer feedback mechanisms that actually yield results.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Quicker resolution of network outage complaints.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Free emergency data loans when balance runs out.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Faster SIM activation and eSIM porting process.,2,0.5
+17. What improvement would encourage you to stay with your provider?,More reliable 5G connection in suburban areas.,2,0.5
+17. What improvement would encourage you to stay with your provider?,No hidden charges or sudden plan cost increases.,2,0.5
+17. What improvement would encourage you to stay with your provider?,More affordable data roaming within Asia.,2,0.5
+17. What improvement would encourage you to stay with your provider?,More regional language options in customer service.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Simpler and clearer billing statements.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Free caller tune service without extra monthly fees.,2,0.5
+17. What improvement would encourage you to stay with your provider?,More frequent network infrastructure upgrades in my city.,2,0.5
+17. What improvement would encourage you to stay with your provider?,No additional fees for paper bills or detailed statements.,2,0.5
+17. What improvement would encourage you to stay with your provider?,More stable connection for online gaming and video calls.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Lower charges for emergency voice top-ups.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Easier porting process without unnecessary retention calls.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Higher data limits for hotspot tethering.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Free replacement of damaged or old SIM cards.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Better network coverage on major highways and trains.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Better upload speeds for work-from-home tasks.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Proactive notifications about scheduled network maintenance.,2,0.5
+17. What improvement would encourage you to stay with your provider?,More flexible payment extension options for postpaid bills.,2,0.5
+17. What improvement would encourage you to stay with your provider?,Provide network for all locations ,1,0.2
+17. What improvement would encourage you to stay with your provider?,"This is 5 g  network area, but several time given 4g",1,0.2
+17. What improvement would encourage you to stay with your provider?,Over all good,1,0.2
+17. What improvement would encourage you to stay with your provider?,Nothing ,1,0.2
+17. What improvement would encourage you to stay with your provider?,Reduction in cost ,1,0.2
+17. What improvement would encourage you to stay with your provider?,Provide service without interruptions,1,0.2
+17. What improvement would encourage you to stay with your provider?,Better network performance during bad weather conditions.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Better multi-line discounts for families.,1,0.2
+17. What improvement would encourage you to stay with your provider?,More generous data allowances on prepaid plans.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Fewer network congestion problems during holidays.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Better roaming signal in neighboring states.,1,0.2
+17. What improvement would encourage you to stay with your provider?,More user-friendly self-service web portal.,1,0.2
+17. What improvement would encourage you to stay with your provider?,More flexible family plan customizations.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Discounts for students and senior citizens.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Shorter resolution window for network speed complaints.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Option to pause subscription when traveling abroad.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Consistent network availability while travelling.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Free trial access to premium service tiers.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Better signal stability in rural areas.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Clearer terms and conditions on promotional offers.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Lower recharge prices for unlimited data.,1,0.2
+17. What improvement would encourage you to stay with your provider?,More competitive pricing on unlimited voice calling plans.,1,0.2
+17. What improvement would encourage you to stay with your provider?,Zero price hikes during contract periods.,1,0.2
