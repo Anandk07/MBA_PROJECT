@@ -39,29 +39,42 @@ def survey_analysis(path, out_dir):
     cat_cols = list(df.columns[1:8]) + list(df.columns[11:13]) + list(df.columns[15:18])
     tables = []
     for col in cat_cols:
-        counts = df[col].fillna("No response").value_counts(dropna=False)
+        responses = df[col].dropna()
+        counts = responses.value_counts()
         for value, count in counts.items():
             tables.append({"question": col, "response": str(value), "frequency": int(count),
-                           "percentage": round(100 * count / len(df), 1)})
+                           "percentage": round(100 * count / len(responses), 1)})
     pd.DataFrame(tables).to_csv(out_dir / "Survey_Frequency_Tables.csv", index=False)
 
-    rating_cols = [df.columns[i] for i in [8, 9, 10, 13, 14]]
+    rating_question_numbers = [9, 10, 11, 14, 15]
+    distribution_names = {
+        9: "satisfaction",
+        10: "reliability",
+        11: "value",
+        14: "continue",
+        15: "switch",
+    }
+    rating_cols = [(number, df.columns[number]) for number in rating_question_numbers]
     summary = []
-    for col in rating_cols:
+    for question_number, col in rating_cols:
         values = pd.to_numeric(df[col], errors="coerce")
+        answered_count = int(values.notna().sum())
+        ratings_4_or_5_count = int((values >= 4).sum())
         summary.append({
             "measure": col, "mean_1_to_5": round(values.mean(), 3),
-            "ratings_4_or_5_n": int((values >= 4).sum()),
-            "ratings_4_or_5_pct": round(100 * (values >= 4).mean(), 1)
+            "ratings_4_or_5_n": ratings_4_or_5_count,
+            "ratings_4_or_5_pct": round(100 * ratings_4_or_5_count / answered_count, 1)
+            if answered_count else float("nan")
         })
-        counts = values.value_counts().sort_index()
+        counts = values.value_counts().reindex([1, 2, 3, 4, 5], fill_value=0)
         plt.figure(figsize=(7, 4))
         plt.bar(counts.index.astype(str), counts.values)
         plt.xlabel("Rating")
         plt.ylabel("Number of responses")
         plt.title(col.split(". ", 1)[-1])
         plt.tight_layout()
-        plt.savefig(out_dir / (f"rating_{df.columns.get_loc(col)+1}.png"), dpi=180)
+        plt.savefig(out_dir / f"rating_{question_number}.png", dpi=180)
+        plt.savefig(out_dir / f"{distribution_names[question_number]}_distribution.png", dpi=180)
         plt.close()
     pd.DataFrame(summary).to_csv(out_dir / "Survey_Rating_Summary.csv", index=False)
     print("\nRating summary:")

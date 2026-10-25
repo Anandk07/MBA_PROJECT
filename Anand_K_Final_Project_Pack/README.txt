@@ -8,10 +8,10 @@ Guide: Dr Veena Christy
 ## Contents
 - `Anand_K_Final_MBA_Project_Report_426_Responses.docx` — full report, with opening pages following the supplied SRM front-page template sequence.
 - `Survey_Responses_426_Cleaned.csv` — supplied questionnaire export with only a punctuation-only complaint-frequency label standardized for grouped analysis.
-- `Survey_Frequency_Tables.csv` — generated response counts and percentages.
-- `Survey_Rating_Summary.csv` — rating means and 4–5 rating counts.
+- `Survey_Frequency_Tables.csv` — generated response counts and percentages; blanks are excluded and percentages use answered responses for each question.
+- `Survey_Rating_Summary.csv` — rating means and 4–5 rating counts/percentages; blanks are excluded per question.
 - `analyse_survey_and_demo_model.py` — reproducible survey analysis source code and optional separate synthetic-model demonstration.
-- `*_distribution.png` — report charts.
+- `analysis_outputs/*_distribution.png` — generated satisfaction, reliability, value, continue, and switch rating charts.
 
 ## Run
 Install dependencies:
