@@ -25,6 +25,9 @@ Optional survey-based switching-intention model demonstration (uses ratings 4–
 
 This model predicts survey-reported switching intention, not verified actual churn. Its single 75/25 holdout evaluation is exploratory and should not be presented as validated real-customer churn performance.
 
+Run its automated tests from this project folder:
+`python -m unittest discover -s tests -v`
+
 If the separately labelled synthetic churn CSV is available, the optional demonstration can be run:
 `python analyse_survey_and_demo_model.py --survey Survey_Responses_426_Cleaned.csv --synthetic-model Synthetic_Churn_Model_Demo_300_Not_Real_Customers.csv`
 
