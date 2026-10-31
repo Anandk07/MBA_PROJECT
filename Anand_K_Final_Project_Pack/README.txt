@@ -20,8 +20,15 @@ Install dependencies:
 Run survey analysis:
 `python analyse_survey_and_demo_model.py --survey Survey_Responses_426_Cleaned.csv`
 
+Optional survey-based switching-intention model demonstration (uses ratings 4–5 on question 15 as high stated intention, with questions 1–13 as model inputs; compares models against a majority-class baseline):
+`python analyse_survey_and_demo_model.py --survey Survey_Responses_426_Cleaned.csv --survey-switch-demo`
+
+This model predicts survey-reported switching intention, not verified actual churn. Its single 75/25 holdout evaluation is exploratory and should not be presented as validated real-customer churn performance.
+
 If the separately labelled synthetic churn CSV is available, the optional demonstration can be run:
 `python analyse_survey_and_demo_model.py --survey Survey_Responses_426_Cleaned.csv --synthetic-model Synthetic_Churn_Model_Demo_300_Not_Real_Customers.csv`
+
+If the synthetic model results CSV is open or locked, the script saves results to a timestamped alternate CSV in the output directory.
 
 ## Data interpretation note
 The supplied survey contains 426 records and 17 questionnaire items. It has no verified churn outcome. The switching-intention question must not be treated as actual churn. The optional synthetic model demonstration is not validated real-world model performance.

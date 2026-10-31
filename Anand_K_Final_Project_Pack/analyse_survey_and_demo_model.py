@@ -19,6 +19,7 @@ Optional synthetic demo:
 """
 from pathlib import Path
 import argparse
+from datetime import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -81,6 +82,93 @@ def survey_analysis(path, out_dir):
     print(pd.DataFrame(summary).to_string(index=False))
     print("\nInterpretation reminder: switching intention is not actual churn.")
 
+def survey_switch_intention_demo(path, out_dir):
+    from sklearn.model_selection import train_test_split
+    from sklearn.compose import ColumnTransformer
+    from sklearn.pipeline import Pipeline
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+    from sklearn.impute import SimpleImputer
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.dummy import DummyClassifier
+    from sklearn.metrics import (accuracy_score, precision_score, recall_score,
+                                 f1_score, roc_auc_score, confusion_matrix)
+
+    df = pd.read_csv(path)
+    switch_col = next((col for col in df.columns if col.startswith("15.")), None)
+    if switch_col is None:
+        raise ValueError("Expected survey question 15 for switching intention.")
+
+    feature_cols = list(df.columns[1:14])
+    switch_rating = pd.to_numeric(df[switch_col], errors="coerce")
+    answered = switch_rating.notna()
+    X = df.loc[answered, feature_cols]
+    y = (switch_rating.loc[answered] >= 4).astype(int)
+    class_counts = y.value_counts()
+    if len(class_counts) != 2 or class_counts.min() < 2:
+        raise ValueError(
+            "Need at least two answered survey responses in each switching-intention class."
+        )
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.25, random_state=42, stratify=y)
+    num = X.select_dtypes(include="number").columns.tolist()
+    cat = X.select_dtypes(exclude="number").columns.tolist()
+    prep = ColumnTransformer([
+        ("num", Pipeline([("imputer", SimpleImputer(strategy="median")),
+                          ("scale", StandardScaler())]), num),
+        ("cat", Pipeline([("imputer", SimpleImputer(strategy="most_frequent")),
+                          ("onehot", OneHotEncoder(handle_unknown="ignore"))]), cat)
+    ])
+    models = {
+        "Majority-class baseline (always 1-3)": DummyClassifier(strategy="most_frequent"),
+        "Logistic Regression": LogisticRegression(max_iter=1000, class_weight="balanced"),
+        "Random Forest": RandomForestClassifier(n_estimators=200, max_depth=6,
+            min_samples_leaf=3, random_state=42, class_weight="balanced")
+    }
+    rows = []
+    for name, clf in models.items():
+        model = Pipeline([("preprocessor", prep), ("classifier", clf)])
+        model.fit(X_train, y_train)
+        pred = model.predict(X_test)
+        proba = model.predict_proba(X_test)[:, 1]
+        tn, fp, fn, tp = confusion_matrix(y_test, pred, labels=[0, 1]).ravel()
+        rows.append({
+            "model": name,
+            "target": "High stated switching intention (rating 4-5)",
+            "test_samples": len(y_test),
+            "test_high_intention_cases": int(y_test.sum()),
+            "test_other_cases": int((y_test == 0).sum()),
+            "accuracy": accuracy_score(y_test, pred),
+            "precision": precision_score(y_test, pred, zero_division=0),
+            "recall": recall_score(y_test, pred, zero_division=0),
+            "f1": f1_score(y_test, pred, zero_division=0),
+            "roc_auc": roc_auc_score(y_test, proba),
+            "true_negatives": tn,
+            "false_positives": fp,
+            "false_negatives": fn,
+            "true_positives": tp
+        })
+        print(f"\n{name} confusion matrix (rows=actual 1-3/4-5, columns=predicted 1-3/4-5):\n"
+              f"{confusion_matrix(y_test, pred, labels=[0, 1])}")
+
+    out = pd.DataFrame(rows)
+    result_path = out_dir / "Survey_Switch_Intention_Model_DEMO_ONLY.csv"
+    try:
+        out.to_csv(result_path, index=False)
+    except PermissionError:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+        fallback_path = result_path.with_name(
+            f"{result_path.stem}_{timestamp}{result_path.suffix}"
+        )
+        out.to_csv(fallback_path, index=False)
+        print(
+            f"\nCould not write {result_path}; it may be open in another program "
+            f"or protected. Results saved to {fallback_path} instead."
+        )
+    print("\nSURVEY SWITCHING-INTENTION DEMO ONLY — this predicts stated intent, not actual churn:")
+    print(out.to_string(index=False))
+
 def synthetic_model_demo(path, out_dir):
     from sklearn.model_selection import train_test_split
     from sklearn.compose import ColumnTransformer
@@ -125,17 +213,33 @@ def synthetic_model_demo(path, out_dir):
                      "roc_auc": roc_auc_score(y_test, proba)})
         print(f"\n{name} confusion matrix:\n{confusion_matrix(y_test, pred)}")
     out = pd.DataFrame(rows)
-    out.to_csv(out_dir / "Synthetic_Model_Comparison_DEMO_ONLY.csv", index=False)
+    result_path = out_dir / "Synthetic_Model_Comparison_DEMO_ONLY.csv"
+    try:
+        out.to_csv(result_path, index=False)
+    except PermissionError:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+        fallback_path = result_path.with_name(
+            f"{result_path.stem}_{timestamp}{result_path.suffix}"
+        )
+        out.to_csv(fallback_path, index=False)
+        print(
+            f"\nCould not write {result_path}; it may be open in another program "
+            f"or protected. Results saved to {fallback_path} instead."
+        )
     print("\nSIMULATION ONLY — not evidence of actual customer churn performance:")
     print(out.to_string(index=False))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--survey", required=True, help="CSV containing timestamp and 17 questionnaire items")
+    parser.add_argument("--survey-switch-demo", action="store_true",
+                        help="Train demo models to predict stated switching intention from survey questions 1-13")
     parser.add_argument("--synthetic-model", help="Optional separate synthetic churn dataset")
     parser.add_argument("--out", default="analysis_outputs")
     args = parser.parse_args()
     out_dir = Path(args.out)
     survey_analysis(Path(args.survey), out_dir)
+    if args.survey_switch_demo:
+        survey_switch_intention_demo(Path(args.survey), out_dir)
     if args.synthetic_model:
         synthetic_model_demo(Path(args.synthetic_model), out_dir)
